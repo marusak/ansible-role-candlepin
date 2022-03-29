@@ -23,7 +23,7 @@
         permanent: true
         offline: false
       when:
-        - "'firewalld.service' in ansible_facts.services"
+        - "'firewalld.service' in ansible_facts.get('services', [])"
       tags:
         - system
         - candlepin
@@ -75,7 +75,7 @@
         permanent: true
         offline: false
       when:
-        - "'firewalld.service' in ansible_facts.services"
+        - "'firewalld.service' in ansible_facts.get('services', [])"
       tags:
         - system
         - candlepin

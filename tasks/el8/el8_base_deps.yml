@@ -100,7 +100,7 @@
     - 8080    # Candlepin Tomcat server
     - 8443    # ^
   when:
-    - "'firewalld.service' in ansible_facts.services"
+    - "'firewalld.service' in ansible_facts.get('services', [])"
   tags:
     - system
     - candlepin
